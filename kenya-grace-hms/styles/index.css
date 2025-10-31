@@ -1,0 +1,57 @@
+/* Reset some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+    color: #333;
+  }
+  
+  /* Center content */
+  main {
+    text-align: center;
+    background: #ffffffcc;
+    padding: 3rem 4rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Heading style */
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #2e7d32; /* calming green */
+  }
+  
+  /* Button style */
+  button {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background: #1b5e20;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  
+  /* Subtle fade-in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }

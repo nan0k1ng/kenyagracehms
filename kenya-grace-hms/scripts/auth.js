@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // ✅ Redirect on success
-      window.location.href = '../../dashboards/admin.html';
+      window.location.href = '../dashboards/admin.html';
     } catch (err) {
       console.error(err);
       errorBox.textContent = `❌ ${err.message}`;

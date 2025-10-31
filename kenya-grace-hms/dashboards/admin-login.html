@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenya Grace HMS — Admin Login</title>
+  <link rel="stylesheet" href="../styles/global.css" />
+  <link rel="stylesheet" href="../styles/admin-auth.css" />
+    <!-- ✅ Load Supabase SDK and client first -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="../scripts/supabaseClient.js" defer></script>
+  <script type="module" src="../scripts/controllers/auth.js" defer></script>
+  
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Admin Login</h2>
+    <form id="admin-login-form">
+      <input type="email" id="email" placeholder="Admin Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <div class="error" id="error-message"></div>
+      <button type="submit">Login as Admin</button>
+    </form>
+    
+    <div class="link-text">
+      New here? <a href="admin-signup.html">Register as a new Admin</a>
+    </div>
+  </div>
+</body>
+</html>

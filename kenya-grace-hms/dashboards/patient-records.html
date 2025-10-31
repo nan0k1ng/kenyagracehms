@@ -1,0 +1,41 @@
+<!-- patient-records.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Records</title>
+  <link rel="stylesheet" href="../styles/patient-records.css" />
+</head>
+<body>
+  <header>
+    <h1>Patient Records</h1>
+    <button onclick="window.location.href='admin.html'">← Back to Dashboard</button>
+  </header>
+
+  <main>
+    <!-- Search bar -->
+    <input type="text" id="search-bar" placeholder="Search patients by name..." />
+
+    <!-- Patient table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Condition</th>
+          <th>Last Visit</th>
+        </tr>
+      </thead>
+      <tbody id="patient-table-body">
+        <!-- Rows will be injected here -->
+      </tbody>
+    </table>
+
+    <!-- Print button -->
+    <button onclick="window.print()">🖨️ Print Records</button>
+  </main>
+
+  <script src="../scripts/controllers/patientRecords.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+/* backup.css & restore.css */
+
+@import url('global.css');
+
+p {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: green;
+}

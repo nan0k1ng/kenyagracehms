@@ -1,0 +1,12 @@
+/* audit-logs.css */
+
+@import url('global.css');
+
+ul#log-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+ul#log-list li {
+  margin-bottom: 0.5rem;
+}

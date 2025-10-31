@@ -1,0 +1,81 @@
+<!-- add-user.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add User</title>
+  <link rel="stylesheet" href="../styles/add-user.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="../scripts/supabaseClient.js" defer></script>
+  <script src="../scripts/controllers/addUser.js" defer></script>
+
+</head>
+
+<body>
+  <header>
+    <h1>Add New User</h1>
+    <button onclick="window.location.href='admin.html'">← Back to Dashboard</button>
+  </header>
+
+  <main>
+    <!-- Form to add a new user -->
+    <section>
+      <h2>User Details</h2>
+      <form id="add-user-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" required />
+
+        <label for="role">Role:</label>
+        <select id="role" required>
+          <option value="">Select Role</option>
+          <option value="Doctor">Doctor</option>
+          <option value="Nurse">Nurse</option>
+          <option value="Admin">Admin</option>
+        </select>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required />
+
+        <button type="submit">Add User</button>
+      </form>
+    </section>
+
+    <!-- Section to display existing users -->
+    <section class="table-container">
+      <h2>Current Users</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example row -->
+          <tr>
+            <td>001</td>
+            <td>Grace Mwangi</td>
+            <td>grace@example.com</td>
+            <td>Admin</td>
+            <td>
+              <button class="action-btn edit-btn">Edit</button>
+              <button class="action-btn delete-btn">Delete</button>
+            </td>
+          </tr>
+          <!-- More rows will be dynamically injected -->
+        </tbody>
+      </table>
+    </section>
+    
+  </main>
+
+  
+</body>
+</html>

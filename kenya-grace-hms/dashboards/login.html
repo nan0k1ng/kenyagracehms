@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenya Grace HMS — User Login</title>
+  <link rel="stylesheet" href="../styles/login.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h2>User Login</h2>
+    <form id="login-form">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <div class="error" id="error-message"></div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="../scripts/supabaseClient.js"></script>
+  <script src="../scripts/auth.js"></script>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const errorDiv = document.getElementById('error-message');
+
+      if (!email || !password) {
+        errorDiv.textContent = 'Please enter both email and password.';
+        return;
+      }
+
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) {
+        errorDiv.textContent = error.message;
+        return;
+      }
+
+      // Check role
+      const { data: roleData } = await supabase
+        .from('users')
+        .select('role')
+        .eq('id', data.user.id)
+        .single();
+
+      if (roleData?.role === 'User') {
+        window.location.href = 'user-dashboard.html';
+      } else if (roleData?.role === 'Admin') {
+        window.location.href = 'admin-dashboard.html';
+      } else {
+        errorDiv.textContent = 'Access denied.';
+        await supabase.auth.signOut();
+      }
+    });
+  </script>
+</body>
+</html>
